@@ -7,6 +7,6 @@ R$ <%= @product.price %><br>
 <%= @product.description %><br>
 
 Rating <br>
-
+<%= link_to 'Delete', product_path(@product), class:"btn btn-warning", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
 <%= link_to "Buy", new_sale_path, class: "btn btn-danger" %>
 <%= link_to "Back", products_path, class: "btn btn-primary" %>
