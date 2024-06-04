@@ -1,0 +1,10 @@
+<h1>Sale!</h1>
+
+<%= link_to 'Click to confirm your buy', product_sales_path(@product), class: 'btn btn-warning', data: { turbo_method: :post, turbo_confirm: 'Are you sure?' } %>
+
+<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <span><strong>Uhull!</strong> 🎉 you successfully added this product to your Sale.</span>
+  <a data-bs-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>

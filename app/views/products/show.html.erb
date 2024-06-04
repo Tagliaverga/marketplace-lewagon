@@ -8,5 +8,5 @@ R$ <%= @product.price %><br>
 
 Rating <br>
 
-<%= link_to "Buy", new_sale_path, class: "btn btn-danger" %>
+<%= link_to "Buy", new_product_sale_path(@product), class: "btn btn-danger" %>
 <%= link_to "Back", products_path, class: "btn btn-primary" %>
