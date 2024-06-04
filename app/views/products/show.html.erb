@@ -1,0 +1,12 @@
+<h1><%= @product.name %></h1>
+
+Falta Foto, Precisamos pensar como <br>
+
+R$ <%= @product.price %><br>
+
+<%= @product.description %><br>
+
+Rating <br>
+
+<%= link_to "Buy", new_sale_path, class: "btn btn-danger" %>
+<%= link_to "Back", products_path, class: "btn btn-primary" %>
