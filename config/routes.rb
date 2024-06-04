@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users do
-    resources :products
-  end
+
+  resources :products
 
   resources :sales, only: %i[new create]
 
