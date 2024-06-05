@@ -1,14 +1,14 @@
 class SalesController < ApplicationController
-
+  before_action :set_product, only: %i[new create]
   def new
-    @sale = Sale.new
   end
 
   def create
-    @sale =Sale.new(sale_params)
-    @sale.save
+    @sale = Sale.new
+    @sale.product = @product
+    @sale.user = current_user
     if @sale.save
-      redirect_to sales_path, notice: 'sale was succefully created.'
+      redirect_to products_path, notice: 'Sale was succesfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -16,7 +16,7 @@ class SalesController < ApplicationController
 
   private
 
-  def sale_params
-    params.require(:sale).permit(:product_id, :user_id)
+  def set_product
+    @product = Product.find(params[:product_id])
   end
 end
