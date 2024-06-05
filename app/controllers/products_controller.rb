@@ -6,14 +6,13 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @sale = Sale.find(params[:product_id])
-    @product.sale = @sale
     @product.user = current_user
     if @product.save
       redirect_to products_path, notice: 'Product was succefully created.'
     else
       render :new, status: :unprocessable_entity
     end
+
   end
 
   def index
@@ -47,6 +46,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :user_id, :photo)
+    params.require(:product).permit(:name, :price, :description, :photo)
   end
 end
