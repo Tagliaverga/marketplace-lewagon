@@ -1,12 +1,16 @@
-<h1><%= @product.name %></h1>
+<div class="container">
+<h1 class="text-uppercase"><%= @product.name %></h1>
 
+<div class="photo card-img-top">
 <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+</div>
 
-R$ <%= @product.price %><br>
-
-<%= @product.description %><br>
-
-Rating <br>
+<div class="info">
+R$ <%= @product.price %>
+<p><%=@product.description%></p>
 <%= link_to 'Delete', product_path(@product), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
 <%= link_to "Buy", new_product_sale_path(@product), class: "btn btn-primary" %>
 <%= link_to "Back", products_path, class: "btn btn-primary"%>
+
+</div>
+</div>
