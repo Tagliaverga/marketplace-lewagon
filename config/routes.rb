@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
+  resources :users, only: %i[show]
+
+  get '/users/:id/historic', to: 'users#historic', as: 'historic_users'
 
   resources :products do
     resources :sales, only: %i[new create]
   end
+
 
 
   root to: "pages#home"
