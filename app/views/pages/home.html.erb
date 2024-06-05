@@ -1,9 +1,7 @@
 <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)) width: 1800 ">
-<%= image_tag "banner1.png", alt: "Le Wagon", width: 1800 %>
-  <div class="container">
+  <div class="banner">
+      <%= image_tag "banner1.png", alt: "Le Wagon", class: "banner" %>
   </div>
-</div>
   <div class="search-form-control form-group">
     <input class="form-control string required" type="text" name="search[query]" id="search_query" />
     <button name="button" type="submit" class="btn btn-flat">
@@ -24,7 +22,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <%= image_tag "MVC.png", alt: "Le Wagon", width: 900 %>
+      <%= image_tag "banana.png", alt: "Le Wagon", width: 900 %>
       <p>Descricao produto 1 </p>
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
@@ -32,7 +30,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag "MVC.png", alt: "Le Wagon", width: 900 %>
+      <%= image_tag "capacete.png", alt: "Le Wagon", width: 900 %>
       <p>Descricao produto 2</p>
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
@@ -40,7 +38,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <%= image_tag "MVC.png", alt: "Le Wagon", width: 900 %>
+      <%= image_tag "cortador.png", alt: "Le Wagon", width: 900 %>
       <p>Descricao produto 3</p>
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
@@ -64,7 +62,7 @@
 
 <div class="cards d-flex justify-content-center">
   <div class="card">
-    <%= image_tag "MVC.png", alt: "Le Wagon"%>
+    <%= image_tag "cortador.png", alt: "Le Wagon"%>
     <div class="container">
       <h4><b>Nome do produto</b></h4>
       <p>Descricao</p>
@@ -72,7 +70,7 @@
     </div>
 </div>
   <div class="card">
-    <%= image_tag "MVC.png", alt: "Le Wagon"%>
+    <%= image_tag "banana.png", alt: "Le Wagon"%>
     <div class="container">
       <h4><b>Nome do produto</b></h4>
       <p>Descricao</p>
