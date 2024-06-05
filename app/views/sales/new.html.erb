@@ -1,4 +1,7 @@
-<h1>Sale!</h1>
+<h1>Check Out</h1>
+
+<%= @product.name %><br>
+R$<%= @product.price %><br>
 
 <%= link_to 'Click to confirm your buy', product_sales_path(@product), class: 'btn btn-warning', data: { turbo_method: :post, turbo_confirm: 'Are you sure?' } %>
 
