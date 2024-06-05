@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <div class="container-fluid d-flex justify-content-center">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active mx-4">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link text-light" %>
           </li>
           <li>
             <%= link_to root_path, class: "navbar-brand mx-4" do %>
@@ -16,7 +16,7 @@
             <% end %>
           </li>
           <li class="nav-item mx-4">
-            <%= link_to "Products", products_path, class: "nav-link" %>
+            <%= link_to "Products", products_path, class: "nav-link text-light" %>
           </li>
           <li class="nav-item dropdown">
           <a href="" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
