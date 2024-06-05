@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @sale = Sale.find(params[:product_id])
+    @product.sale = @sale
     @product.user = current_user
     if @product.save
       redirect_to products_path, notice: 'Product was succefully created.'
