@@ -1,12 +1,12 @@
 <h1><%= @product.name %></h1>
 
-Falta Foto, Precisamos pensar como <br>
+<%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
 
 R$ <%= @product.price %><br>
 
 <%= @product.description %><br>
 
 Rating <br>
-
-<%= link_to "Buy", new_product_sale_path(@product), class: "btn btn-danger" %>
-<%= link_to "Back", products_path, class: "btn btn-primary" %>
+<%= link_to 'Delete', product_path(@product), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+<%= link_to "Buy", new_product_sale_path(@product), class: "btn btn-primary" %>
+<%= link_to "Back", products_path, class: "btn btn-primary"%>
