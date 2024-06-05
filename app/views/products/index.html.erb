@@ -1,8 +1,21 @@
 <h1>Coisas que Ninguem Precisa</h1>
-
-<ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
+  <div class="cardx">
+
+           <div class="row">
+<div class="col-sm-6">
+  <div class="card m-4">
+        <%= cl_image_tag product.photo.key, height: 300, crop: :fill if product.photo.key.present? %>
+        <div class="container">
+          <h4 class="text-capitalize m-2"><%= product.name %></h4>
+          <p><%= link_to "Ver produto", product_path(product), class: "btn btn-primary" %></p>
+        </div>
+      </div>
+</div>
+ </div>
     <% end %>
-</ul>
+
+
+  </div>
+
  <%= link_to "Adicionar um produto", new_product_path, class: "btn btn-primary" %>
