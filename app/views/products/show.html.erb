@@ -1,6 +1,6 @@
 <h1><%= @product.name %></h1>
 
-Falta Foto, Precisamos pensar como <br>
+<%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
 
 R$ <%= @product.price %><br>
 
