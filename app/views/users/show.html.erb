@@ -1,13 +1,20 @@
 <div class="container justify-content-center mt-4">
-  <h1 class="rubik-mono-one-regular">Usuário:</h1><br>
-  <div class="justify-content-center"><br>
-   <h3 class="nanum-myeongjo-regular">Name: <%= @user.name %></h3><br>
+  <h1 class="rubik-mono-one-regular">Usuário</h1><br>
+  <div class=" d-flex justify-content-start my-3"><br>
+   <h3 class="arimo"><strong>Name: </strong></h3><h3 class="nanum-myeongjo-regular mx-3"><%= @user.name %></h3><br>
   </div>
-  <div class="justify-content-center"><br>
-   <h3 class="nanum-myeongjo-regular">Address:  <%= @user.address %></h3><br>
+  <div class="d-flex justify-content-start my-3"><br>
+  <h3 class="arimo"><strong>Address:  </strong></h3><h3 class="nanum-myeongjo-regular mx-3"><%= @user.address %></h3><br>
   </div>
-  <div class="justify-content-center"><br>
-  <h3 class="nanum-myeongjo-regular">E-mail: <%= @user.email %></h3><br>
+  <div class="d-flex justify-content-start my-3"><br>
+  <h3 class="arimo"><strong>E-mail: </strong></h3><h3 class="nanum-myeongjo-regular mx-3"><%=  @user.email %></h3><br>
   </div>
-  Rating <br>
+  <div class="d-flex justify-content-start align-items-center my-3">
+    <h3 class="arimo mr-1"><strong>Rating </strong></h3>
+    <h5 class="fa-solid fa-star mx-1"></h5>
+    <h5 class="fa-solid fa-star mx-1"></h5>
+    <h5 class="fa-solid fa-star mx-1"></h5>
+    <h5 class="fa-solid fa-star mx-1"></h5>
+    <h5 class="fa-regular fa-star mx-1"></h5> <br>
+  </div>
 </div>
