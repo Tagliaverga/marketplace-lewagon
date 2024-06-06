@@ -6,7 +6,7 @@
         <%= cl_image_tag product.photo.key, height: 300, class: "img-card-index", crop: :fill if product.photo.key.present? %>
         <div class="card-body">
           <div class="">
-            <h4 class="card-title"><%= product.name %></h4>
+            <h4 class="card-title text-capitalize"><%= product.name %></h4>
           </div>
           <div class="">
             <p class="card-text"><%= link_to "Ver produto", product_path(product), class: "btn btn-primary btn-card" %></p>

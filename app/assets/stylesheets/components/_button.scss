@@ -1,7 +1,12 @@
 .btn-card {
-  background-color: #ffd700;
+  background-color: #2F4F4F;
   border-radius: 20px;
   justify-content: center;
+}
+
+.btn-card:hover{
+  background-color: #3f6767;
+  border-color: #3f6767;
 }
 
 .btn-ghost {
