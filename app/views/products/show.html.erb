@@ -8,9 +8,11 @@
 <div class="info">
 R$ <%= @product.price %>
 <p><%=@product.description%></p>
-<%= link_to 'Delete', product_path(@product), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-<%= link_to "Buy", new_product_sale_path(@product), class: "btn btn-primary" %>
-<%= link_to "Back", products_path, class: "btn btn-primary"%>
+<%= link_to 'Delete', product_path(@product), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+<%= link_to "Buy", new_product_sale_path(@product), class: "btn btn-outline-success" %>
+<%= link_to "Back", products_path, class: "btn btn-outline-warning"%>
+<%= link_to "Update", edit_product_path, class: "btn btn-outline-info" %>
+
 
 </div>
 </div>

@@ -3,3 +3,53 @@
   border-radius: 20px;
   justify-content: center;
 }
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-outline-danger {
+  border-radius: 50px;
+  padding: 8px 24px;
+}
+.btn-outline-danger:hover {
+  opacity: 1;
+}
+
+.btn-outline-success {
+  border-radius: 50px;
+  padding: 8px 24px;
+}
+.btn-outline-success:hover {
+  opacity: 1;
+}
+
+.btn-outline-warning {
+  border-radius: 50px;
+  padding: 8px 24px;
+}
+
+.btn-outline-warning:hover {
+  opacity: 1;
+}
+.btn-outline-info {
+  border-radius: 50px;
+  padding: 8px 24px;
+  border-color: #2b20cc;
+  color: #2b20cc;
+}
+.btn-outline-info:hover {
+  opacity: 1;
+  background-color: #2b20cc;
+  border-color: #2b20cc;
+}
