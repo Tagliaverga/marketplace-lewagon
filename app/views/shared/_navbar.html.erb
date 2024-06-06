@@ -5,9 +5,13 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <p class="rowdies-regular text-light mt-1">Coisas</p>
+    <p class="amatic-sc-regular text-light mt-3">Que</p>
+    <p class="rubik-mono-one-regular text-light mt-0">Ninguem</p>
+    <p class="concert-one-regular text-light mt-2">Precisa</p>
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="text-navbar">Coisas</li>
+          <li>Coisas</li>
           <li class="nav-item active mx-4">
             <%= link_to "Home", root_path, class: "nav-link text-light" %>
           </li>
@@ -17,7 +21,7 @@
             <% end %>
           </li>
           <li class="nav-item mx-4">
-            <%= link_to "Products", products_path, class: "nav-link text-light" %>
+            <%= link_to "Products", products_path, class: "nav-link text-light " %>
           </li>
           <li class="nav-item dropdown">
           <a href="" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
