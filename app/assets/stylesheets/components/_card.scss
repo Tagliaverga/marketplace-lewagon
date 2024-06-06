@@ -38,3 +38,18 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+#card-index {
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px;
+  margin: 15px;
+  background-color: #90ee90;
+}
+
+.img-card-index {
+  border-radius: 20px;
+  height: 250px;
+  width: 300px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
