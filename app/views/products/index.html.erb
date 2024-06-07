@@ -4,7 +4,7 @@
   <div class="row">
   <% @products.each do |product| %>
     <div class="col-md-4 mb-4">
-      <<div class="card card-hover-effect" id="card-index">>
+      <div class="card card-hover-effect" id="card-index">
         <div class="img mt-3">
           <%= cl_image_tag product.photo.key, height: 360, class: "img-card-index", crop: :fill if product.photo.key.present? %>
         </div>
