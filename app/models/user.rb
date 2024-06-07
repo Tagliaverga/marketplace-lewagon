@@ -1,4 +1,15 @@
 class User < ApplicationRecord
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+                  against: [ :name, :price, :description ],
+                  associated_against: {
+                              user: [ :name ]
+                              },
+                              using: {
+                                tsearch: { prefix: true }
+                              }
+                              
   has_many :sales
   has_many :products
 
