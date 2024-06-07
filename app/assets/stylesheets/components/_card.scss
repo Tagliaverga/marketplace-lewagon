@@ -74,7 +74,6 @@
 .card-hover-effect {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-
 /* Aplica a transformação de zoom e brilho quando o mouse estiver sobre o card */
 .card-hover-effect:hover {
   transform: scale(1.05); /* Zoom */
