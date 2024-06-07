@@ -1,6 +1,5 @@
 <h1 class=" d-flex justify-content-center m-4 title rowdies-bold">Produtos</h1>
 <div class="arimo">
- <%= link_to "Adicionar um produto", new_product_path, class: "btn btn-primary btn-card" %>
 </div>
   <div class="row">
   <% @products.each do |product| %>
@@ -20,6 +19,7 @@
       </div>
     </div>
   <% end %>
+ <%= link_to "Adicionar um produto", new_product_path, class: "btn btn-primary btn-card" %>
 </div>
 
 

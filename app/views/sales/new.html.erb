@@ -1,7 +1,7 @@
 <div class="d-flex">
   <div>
     <div class="d-flex justify-content-start my-4">
-      <h1 class="rowdies-regular">Check Out</h1>
+      <h1 class="arimo"><strong>Carrinho  </strong><i class="fa-solid fa-cart-shopping"></i></h1>
     </div>
 
     <div class="photo card-img-top">
@@ -10,22 +10,25 @@
     <%= @product.name %><br>
   </div>
 
-  <div class="mx-5 my-5">
-    Preço:
-    R$<%= @product.price %><br>
-    Descrição: <%= @product.description %><br>
+  <div class="sale_price mx-5">
+    <div class="mx-5 my-5">
+      Preço:
+      R$<%= @product.price %><br>
+      Descrição: <%= @product.description %><br>
 
-    <%= link_to 'Click to confirm your buy', product_sales_path(@product), class: 'btn btn-warning', data: { turbo_method: :post, turbo_confirm: 'Are you sure?' } %>
+      <%= link_to 'Confirme', product_sales_path(@product), class: 'btn btn-outline-success my-3', data: { turbo_method: :post, turbo_confirm: 'Tem certeza ?' } %>
+    </div>
   </div>
-  <div class="my-5">
-    <h4>Entrega Grátis:</h4><br>
-    <p>Compre agora e receba gratuitamente <br>no conforto do seu lar.</p>
-
+  <div class="sale_info mx-3">
+    <div class="my-5">
+      <h4><i class="fa-solid fa-plane-departure"></i> Entrega Grátis:</h4><br>
+      <p>Compre agora e receba gratuitamente <br>no conforto do seu lar.</p>
+    </div>
   </div>
 </div>
 
-<div class="flash flash-success alert alert-dismissible fade show" role="alert">
-  <span><strong>Uhull!</strong> 🎉 you successfully added this product to your Sale.</span>
+<div class="flash flash-success alert alert-dismissible fade show mb-4" role="alert">
+  <span><strong>Uhull!</strong> 🎉 Excelente escolha, clique em <strong>Confirme</strong> e finalize sua compra</span>
   <a data-bs-dismiss="alert" aria-label="Close">
     <i class="fas fa-times"></i>
   </a>
