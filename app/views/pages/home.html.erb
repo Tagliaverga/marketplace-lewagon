@@ -2,19 +2,22 @@
     <%= image_tag "banner1.png", alt: "Le Wagon", class: "banner-img" %>
 </div>
 
-  <div class="search-form-control form-group mt-1">
+<div class="container">
+  <div class="search-form-control form-group m-3">
     <%= form_with url: products_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Encontre seu produto"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-flat" %>
+      <%= submit_tag "Buscar", name: "", class: "btn btn-flat" %>
     <% end %>
   </div>
+</div>
+
 
 <h2 class="text-center m-4 title rowdies-bold">Itens em destaque</h2>
-<div class="container container d-flex align-items-center justify-content-center">
+<div class=" container d-flex align-items-center justify-content-center">
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -24,13 +24,13 @@
             <% end %>
           </li>
           <li class="nav-item mx-4">
-            <%= link_to "sobre", about_path, class: "nav-link text-light arimo" %>
+            <%= link_to "Sobre", about_path, class: "nav-link text-light arimo" %>
           </li>
       </ul>
     </div>
     <div class="mx-5">
       <ul class="navbar-nav me-auto">
-        <li><%= link_to "Log out", destroy_user_session_path(current_user.id), class: "btn text-light mx-3" %></li>
+        <li><%= link_to "Sair", destroy_user_session_path(current_user.id), class: "btn text-light mx-3" %></li>
         <li class="nav-item dropdown">
           <%= link_to user_path(current_user.id) do %>
             <%= image_tag "https://ca.slack-edge.com/T02NE0241-U0700M8C23U-03380728918c-512", class: "avatar", alt: "dropdown menu" %>
