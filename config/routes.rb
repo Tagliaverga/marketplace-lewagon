@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   get '/users/:id/historic', to: 'users#historic', as: 'historic_users'
 
-
+  get '/about', to: 'pages#about', as: 'about'
+  
   resources :products do
     resources :sales, only: %i[new create]
   end
