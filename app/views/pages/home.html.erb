@@ -1,6 +1,41 @@
 <div class="container d-flex justify-content-center">
-    <%= image_tag "banner1.png", alt: "Le Wagon", class: "banner-img" %>
-</div>
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <%= image_tag "banner1.png", alt: "Le Wagon", class: "banner-img" %>
+          <div class="carousel-caption d-none d-md-block">
+
+          </div>
+        </div>
+        <div class="carousel-item " data-bs-interval="2000">
+          <%= image_tag "friday.png", alt: "Friday", class: "banner-img" %>
+          <div class="carousel-caption d-none d-md-block">
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "ofertas.png", alt: "Ofertas", class: "banner-img" %>
+          <div class="carousel-caption d-none d-md-block">
+
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
 
   <div class="search-form-control form-group mt-1">
     <%= form_with url: products_path, method: :get, class: "d-flex" do %>
@@ -13,60 +48,95 @@
     <% end %>
   </div>
 
-<h2 class="text-center m-4 title rowdies-bold">Itens em destaque</h2>
-<div class="container container d-flex align-items-center justify-content-center">
-  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <%= image_tag "banana.png", alt: "Le Wagon", width: 450 %>
-        <div class="carousel-caption d-none d-md-block">
+  <h2 class="text-center m-4 title rowdies-bold">Itens em destaque</h2>
 
-        </div>
+      <div class="row">
+        <% @products.last(3).each do |product| %>
+          <div class="col-md-4 mb-4">
+            <div class="container solid">
+              <div class="img mt-3">
+                <%= cl_image_tag product.photo.key, height: 360, class: "img-card-index", crop: :fill if product.photo.key.present? %>
+              </div>
+              <div class="container">
+                <h4 class="arimo"><b><%= product.name %></b></h4>
+                <p class="arimo">R$<%= product.price %></p>
+                <a><%= link_to "Ver produto", product_path(product), class: "btn btn-primary btn-card d-flex mb-4" %></a>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <%= image_tag "capacete.png", alt: "Le Wagon", width: 450 %>
-        <div class="carousel-caption d-none d-md-block">
 
-        </div>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "cortador.png", alt: "Le Wagon", width: 450 %>
-        <div class="carousel-caption d-none d-md-block">
+  <h2 class="text-center m-4 title rowdies-bold">Mais vendidos</h2>
 
-        </div>
+      <div class="row">
+        <% @products.first(3).each do |product| %>
+          <div class="col-md-4 mb-4">
+            <div class="container solid">
+              <div class="img mt-3">
+                <%= cl_image_tag product.photo.key, height: 360, class: "img-card-index", crop: :fill if product.photo.key.present? %>
+              </div>
+              <div class="container">
+                <h4 class="arimo"><b><%= product.name %></b></h4>
+                <p class="arimo">R$<%= product.price %></p>
+                <a><%= link_to "Ver produto", product_path(product), class: "btn btn-primary btn-card d-flex mb-4" %></a>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-    </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
 
-<h2 class="text-center m-4 title rowdies-bold">Adicionados recentemente</h2>
-<div class="row">
-  <% @products.last(3).each do |product| %>
-    <div class="col-md-4 mb-4">
-      <div class="container solid">
-        <div class="img mt-3">
-          <%= cl_image_tag product.photo.key, height: 360, class: "img-card-index", crop: :fill if product.photo.key.present? %>
-        </div>
-        <div class="container">
-          <h4 class="arimo"><b><%= product.name %></b></h4>
-          <p class="arimo">R$<%= product.price %></p>
-          <a><%= link_to "Ver produto", product_path(product), class: "btn btn-primary btn-card d-flex mb-4" %></a>
-      </div>
-      </div>
-    </div>
-  <% end %>
+
+    <%# <div class="carousel-inner"> %>
+      <%# <div class="carousel-item active" data-bs-interval="10000"> %>
+         <%# <%= image_tag "banner1.png", alt: "Le Wagon", class: "banner-img" %>
+        <%# <div class="carousel-caption d-none d-md-block"> %>
+
+        <%# </div> %>
+      <%# </div> %>
+      <%# <div class="carousel-item" data-bs-interval="2000"> %>
+        <%# <%= image_tag "capacete.png", alt: "Le Wagon", width: 450 %>
+        <%# <div class="carousel-caption d-none d-md-block"> %>
+
+        <%# </div> %>
+      <%# </div> %>
+      <%# <div class="carousel-item"> %>
+        <%# <%= image_tag "cortador.png", alt: "Le Wagon", width: 450 %>
+        <%# <div class="carousel-caption d-none d-md-block"> %>
+
+        <%# </div> %>
+      <%# </div> %>
+    <%# </div> %>
+
+    <%# <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev"> %>
+      <%# <span class="carousel-control-prev-icon" aria-hidden="true"></span> %>
+      <%# <span class="visually-hidden">Previous</span> %>
+    <%# </button> %>
+    <%# <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next"> %>
+      <%# <span class="carousel-control-next-icon" aria-hidden="true"></span> %>
+      <%# <span class="visually-hidden">Next</span> %>
+    <%# </button> %>
+    <%# </div> %>
+    <%# </div> %>
+
+    <%# <h2 class="text-center m-4 title rowdies-bold">Adicionados recentemente</h2> %>
+    <%# <div class="row"> %>
+      <%# <% @products.last(3).each do |product| %>
+        <%# <div class="col-md-4 mb-4"> %>
+          <%# <div class="container solid"> %>
+            <%# <div class="img mt-3"> %>
+              <%# <%= cl_image_tag product.photo.key, height: 360, class: "img-card-index", crop: :fill if product.photo.key.present? %>
+            <%# </div> %>
+            <%# <div class="container"> %>
+              <%# <h4 class="arimo"><b><%= product.name %>
+              <%# </b></h4> %>
+              <%# <p class="arimo">R$<%= product.price %>
+              <%# </p> %>
+              <%# <a><%= link_to "Ver produto", product_path(product), class: "btn btn-primary btn-card d-flex mb-4" %>
+              <%# </a> %>
+          <%# </div> %>
+          <%# </div> %>
+        <%# </div> %>
+      <%# <% end %>
 </div>

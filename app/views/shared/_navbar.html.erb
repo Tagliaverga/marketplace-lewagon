@@ -30,7 +30,7 @@
     </div>
     <div class="mx-5">
       <ul class="navbar-nav me-auto">
-        <li><%= link_to "Log out", destroy_user_session_path(current_user.id), class: "btn text-light mx-3" %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn text-light mx-3 dropdown-item" %></li>
         <li class="nav-item dropdown">
           <%= link_to user_path(current_user.id) do %>
             <%= image_tag "https://ca.slack-edge.com/T02NE0241-U0700M8C23U-03380728918c-512", class: "avatar", alt: "dropdown menu" %>
