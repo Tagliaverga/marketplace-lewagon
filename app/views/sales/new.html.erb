@@ -1,9 +1,28 @@
-<h1>Check Out</h1>
+<div class="d-flex">
+  <div>
+    <div class="d-flex justify-content-start my-4">
+      <h1 class="rowdies-regular">Check Out</h1>
+    </div>
 
-<%= @product.name %><br>
-R$<%= @product.price %><br>
+    <div class="photo card-img-top">
+      <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+    </div><br>
+    <%= @product.name %><br>
+  </div>
 
-<%= link_to 'Click to confirm your buy', product_sales_path(@product), class: 'btn btn-warning', data: { turbo_method: :post, turbo_confirm: 'Are you sure?' } %>
+  <div class="mx-5 my-5">
+    Preço:
+    R$<%= @product.price %><br>
+    Descrição: <%= @product.description %><br>
+
+    <%= link_to 'Click to confirm your buy', product_sales_path(@product), class: 'btn btn-warning', data: { turbo_method: :post, turbo_confirm: 'Are you sure?' } %>
+  </div>
+  <div class="my-5">
+    <h4>Entrega Grátis:</h4><br>
+    <p>Compre agora e receba gratuitamente <br>no conforto do seu lar.</p>
+
+  </div>
+</div>
 
 <div class="flash flash-success alert alert-dismissible fade show" role="alert">
   <span><strong>Uhull!</strong> 🎉 you successfully added this product to your Sale.</span>
