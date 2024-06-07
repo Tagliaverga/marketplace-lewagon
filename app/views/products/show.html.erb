@@ -9,10 +9,10 @@
     <p><strong> R$ <%= @product.price %> </strong> - <%=@product.description%></p>
   </div>
   <div class="buttons d-flex justify-content-center">
-    <%= link_to "Buy", new_product_sale_path(@product), class: "btn btn-outline-success m-1 " %>
-    <%= link_to "Back", products_path, class: "btn btn-outline-warning m-1" %>
-    <%= link_to "Update", edit_product_path, class: "btn btn-outline-info m-1" %>
-    <%= link_to 'Delete', product_path(@product), class: "btn btn-outline-danger m-1", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+    <%= link_to "Comprar", new_product_sale_path(@product), class: "btn btn-outline-success m-1 " %>
+    <%= link_to "Voltar", products_path, class: "btn btn-outline-warning m-1" %>
+    <%= link_to "Atualizar", edit_product_path, class: "btn btn-outline-info m-1" %>
+    <%= link_to 'Apagar', product_path(@product), class: "btn btn-outline-danger m-1", data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?'} %>
   </div>
 
 </div>

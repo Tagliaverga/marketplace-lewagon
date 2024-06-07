@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-      redirect_to products_path, notice: 'Product was succefully created.'
+      redirect_to products_path, notice: 'O produto foi criado.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to product_path, notice: 'Product was succefully updated'
+      redirect_to product_path, notice: 'O produto foi atualizado'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to products_path, notice: 'Product was successfully destroyed.', status: :see_other
+    redirect_to products_path, notice: 'O produto foi deletado com sucesso.', status: :see_other
 
   end
 
